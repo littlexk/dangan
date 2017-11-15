@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.van.modules.tw.dao.order.OrderManageDao">
+    <select id="list" parameterType="map" resultType="upperCaseKeyMap">
+        select t.* from T_TW_ORDER t
+    </select>
+
+    <insert id="insert" parameterType="map">
+        insert into  T_TW_ORDER (
+        <trim prefix=""  suffixOverrides=",">
+			ID,ORDER_NUM,CUSTOMER,CONTACTS,ADDRESS,PHONE,BILLING_DATE,DELIVERY,DELIVERY_TYPE,BILLING_NAME,BUSI_NAME,STATUS,SETTLE_TYPE,DEL_DECIMAL,PAYABLE_MONEY,DEL_ZERO_MONEY,PAID_MONEY,REMARK,UNPAID_MONEY,CREATE_DATE,CREATE_ID,DELETE_FALG,DELETE_ID,DELETE_DATE,UPDATE_DATE,UPDATE_ID
+        </trim>
+        )values(
+        <trim prefix=""  suffixOverrides=",">
+			SEQ_T_TW_ORDER.Nextval,#{ORDER_NUM},#{CUSTOMER},#{CONTACTS},#{ADDRESS},#{PHONE},#{BILLING_DATE},#{DELIVERY},#{DELIVERY_TYPE},#{BILLING_NAME},#{BUSI_NAME},#{STATUS},#{SETTLE_TYPE},#{DEL_DECIMAL},#{PAYABLE_MONEY},#{DEL_ZERO_MONEY},#{PAID_MONEY},#{REMARK},#{UNPAID_MONEY},#{CREATE_DATE},#{CREATE_ID},#{DELETE_FALG},#{DELETE_ID},#{DELETE_DATE},#{UPDATE_DATE},#{UPDATE_ID}
+        </trim>
+        )
+    </insert>
+    <select id="get" parameterType="string" resultType="upperCaseKeyMap">
+        SELECT t.* FROM  T_TW_ORDER t where t.ID=#{id}
+    </select>
+
+    <update id="update"  parameterType="map">
+        update  T_TW_ORDER
+        <set>
+            ORDER_NUM = #{ORDER_NUM},CUSTOMER = #{CUSTOMER},CONTACTS = #{CONTACTS},ADDRESS = #{ADDRESS},PHONE = #{PHONE},BILLING_DATE = #{BILLING_DATE},DELIVERY = #{DELIVERY},DELIVERY_TYPE = #{DELIVERY_TYPE},BILLING_NAME = #{BILLING_NAME},BUSI_NAME = #{BUSI_NAME},STATUS = #{STATUS},SETTLE_TYPE = #{SETTLE_TYPE},DEL_DECIMAL = #{DEL_DECIMAL},PAYABLE_MONEY = #{PAYABLE_MONEY},DEL_ZERO_MONEY = #{DEL_ZERO_MONEY},PAID_MONEY = #{PAID_MONEY},REMARK = #{REMARK},UNPAID_MONEY = #{UNPAID_MONEY},CREATE_DATE = #{CREATE_DATE},CREATE_ID = #{CREATE_ID},DELETE_FALG = #{DELETE_FALG},DELETE_ID = #{DELETE_ID},DELETE_DATE = #{DELETE_DATE},UPDATE_DATE = #{UPDATE_DATE},UPDATE_ID = #{UPDATE_ID}
+        </set>
+        where ID = #{ID}
+    </update>
+    <delete id="delete" parameterType="map">
+        DELETE FROM T_TW_ORDER
+        <where>
+            AND ID IN
+            <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+            #{item}
+            </foreach>
+        </where>
+    </delete>
+
+    <!--订单明细-->
+    <select id="getDetailByOrderId" parameterType="map" resultType="upperCaseKeyMap">
+        select t.* from T_TW_ORDER_DEATIL t
+        <where>
+            t.ORDER_ID =#{ORDER_ID}
+        </where>
+    </select>
+    <insert id="insertDetail" parameterType="map">
+        insert into  T_TW_ORDER_DEATIL (
+        <trim prefix=""  suffixOverrides=",">
+            ID,ORDER_ID,PRO_NAME,PRO_STD,UNIT,NUM,MONEY,REMARK
+        </trim>
+        )values(
+        <trim prefix=""  suffixOverrides=",">
+            SEQ_T_TW_ORDER_DEAIL.Nextval,#{ORDER_ID},#{PRO_NAME},#{PRO_STD},#{UNIT},#{NUM},#{MONEY},#{REMARK}
+        </trim>
+        )
+    </insert>
+    <delete id="deleteDetailByOrderId" parameterType="map">
+        DELETE FROM T_TW_ORDER_DEATIL
+        <where>
+            t.ORDER_ID =#{ORDER_ID}
+        </where>
+    </delete>
+</mapper>

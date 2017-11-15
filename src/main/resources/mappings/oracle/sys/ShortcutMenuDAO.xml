@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.sys.dao.ShortcutMenuDao">
+	<select id="findByUserId" parameterType="String" resultType="upperCaseKeyMap">
+       select b.name,b.href,b.icon from (
+   			 select u.* from  SYS_USER_SHORTCUT u where u.user_id=#{userId}
+       ) a
+       join sys_menu b on a.menu_id = b.id
+       order by a.sort
+	</select>
+
+	<delete id="delMenuByUserId" parameterType="String">
+		delete from SYS_USER_SHORTCUT where user_id=#{userId}
+	</delete>
+
+	<insert id="save" parameterType="map">
+		insert into  SYS_USER_SHORTCUT(user_id,menu_id,sort) values(#{USER_ID},#{MENU_ID},#{SORT})
+	</insert>
+</mapper>

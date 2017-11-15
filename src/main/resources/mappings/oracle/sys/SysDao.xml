@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.sys.dao.SysDao">
+	<select id="getIndexData" parameterType="map" resultType="upperCaseKeyMap">
+		<if test="TYPE!=null and TYPE!='' and TYPE=='ORG'">
+			select * from INDEX_ORG_INFO where org_id=#{ORG_ID} and year=#{YEAR}
+		</if>
+		<if test="TYPE!=null and TYPE!='' and TYPE=='EMP'">
+			<if test="SUB_TYPE==null or SUB_TYPE==''">
+				select * from INDEX_EMP_INFO where org_id=#{ORG_ID} and year=#{YEAR}
+			</if>
+			<if test="SUB_TYPE!=null and SUB_TYPE!=''">
+				select * from INDEX_EMP_INFO_SUB where org_id=#{ORG_ID} and year=#{YEAR} and type=#{SUB_TYPE}
+			</if>
+		</if>
+		<if test="TYPE!=null and TYPE!='' and TYPE=='DEV'">
+			<if test="SUB_TYPE==null or SUB_TYPE==''">
+				select * from INDEX_DEV_INFO where org_id=#{ORG_ID} and year=#{YEAR}
+			</if>
+			<if test="SUB_TYPE!=null and SUB_TYPE!=''">
+				<if test="SUB2_TYPE!=null and SUB2_TYPE!=''">
+					select * from INDEX_DEV_INFO_SUB_2 where org_id=#{ORG_ID} and year=#{YEAR} and dev_type=#{SUB_TYPE} and type=#{SUB2_TYPE}
+				</if>
+				<if test="SUB2_TYPE==null or SUB2_TYPE==''">
+					select * from INDEX_DEV_INFO_SUB_1 where org_id=#{ORG_ID} and year=#{YEAR} and type=#{SUB_TYPE}
+				</if>
+			</if>
+		</if>
+	</select>
+</mapper>

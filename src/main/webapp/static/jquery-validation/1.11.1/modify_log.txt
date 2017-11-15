@@ -1,0 +1,13 @@
+描述：解决ie8下，必选 项不能判断问题
+修改时间：2014－11－10
+修改人：yiw@bonus.com
+修改文件：jquery.validate.js
+修改代码：
+  修改之前：
+  if ($(event.target).attr("formnovalidate") !== undefined ) {
+		validator.cancelSubmit = true;
+  }
+ 修改之后：
+  if ($(event.target).attr("formnovalidate") && $(event.target).attr("formnovalidate") !== undefined ) {
+		validator.cancelSubmit = true;
+  }

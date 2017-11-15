@@ -1,0 +1,80 @@
+
+文件：bootstrap-select.css
+1.解决下拉框中，查询框显示部分的问题
+.form-inline .bootstrap-select.btn-group .form-control {
+  width: 100%;
+}
+修改为
+.form-inline .bootstrap-select.btn-group .form-control {
+  width: 95%;
+}
+
+文件：bootstrap-select.js
+1.解决下位框 ，打勾出不来的问题
+tickIcon: 'glyphicon-ok'
+修改为：
+tickIcon: 'icon-ok'
+
+2.解决下位框，出现滚动条时，最后一个选 项看不到的问题
+$menu.css({
+          'max-height': menuHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight + 'px',
+          'overflow': 'hidden',
+          'min-height': ''
+        });
+修改为：
+$menu.css({
+          'max-height': menuHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight+ 52 + 'px',
+          'overflow': 'hidden',
+          'min-height': ''
+        });
+        
+ 2.解决IE8下，下拉框报错问题
+  var liHeight = a.offsetHeight,
+          headerHeight = header ? header.offsetHeight : 0,
+          searchHeight = search ? search.offsetHeight : 0,
+          actionsHeight = actions ? actions.offsetHeight : 0,
+          doneButtonHeight = doneButton ? doneButton.offsetHeight : 0,
+          dividerHeight = $(divider).outerHeight(true),
+          // fall back to jQuery if getComputedStyle is not supported
+          menuStyle = getComputedStyle ? getComputedStyle(menu) : false,
+          $menu = menuStyle ? $(menu) : null,
+          menuPadding = parseInt(menuStyle ? menuStyle.paddingTop : $menu.css('paddingTop')) +
+                        parseInt(menuStyle ? menuStyle.paddingBottom : $menu.css('paddingBottom')) +
+                        parseInt(menuStyle ? menuStyle.borderTopWidth : $menu.css('borderTopWidth')) +
+                        parseInt(menuStyle ? menuStyle.borderBottomWidth : $menu.css('borderBottomWidth')),
+          menuExtras =  menuPadding + 
+                        parseInt(menuStyle ? menuStyle.marginTop : $menu.css('marginTop')) + 
+                        parseInt(menuStyle ? menuStyle.marginBottom : $menu.css('marginBottom')) + 2;
+   修改为：     
+ var liHeight = a.offsetHeight,
+          headerHeight = header ? header.offsetHeight : 0,
+          searchHeight = search ? search.offsetHeight : 0,
+          actionsHeight = actions ? actions.offsetHeight : 0,
+          doneButtonHeight = doneButton ? doneButton.offsetHeight : 0,
+          dividerHeight = $(divider).outerHeight(true);
+          // fall back to jQuery if getComputedStyle is not supported
+      var   menuStyle=false;
+       try{
+          menuStyle = getComputedStyle ? getComputedStyle(menu) : false;
+       }catch(e){
+    	   
+       }    
+       var   $menu =$(menu),
+             menuPadding = parseInt(menuStyle ? menuStyle.paddingTop : $menu.css('paddingTop')) +
+                        parseInt(menuStyle ? menuStyle.paddingBottom : $menu.css('paddingBottom')) +
+                        parseInt(menuStyle ? menuStyle.borderTopWidth : $menu.css('borderTopWidth')) +
+                        parseInt(menuStyle ? menuStyle.borderBottomWidth : $menu.css('borderBottomWidth')),
+             menuExtras =  menuPadding + 
+                        parseInt(menuStyle ? menuStyle.marginTop : $menu.css('marginTop')) + 
+                        parseInt(menuStyle ? menuStyle.marginBottom : $menu.css('marginBottom')) + 2;
+   $menu.css({
+            'max-height': menuHeight + 'px',
+            'overflow': 'hidden',
+            'min-height': minHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight + 'px'
+          });                      
+  修改为：                      
+  $menu.css({
+            'max-height': menuHeight + 'px',
+            //'overflow': 'hidden',
+            'min-height': minHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight + 'px'
+          });

@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+body{ padding:0; min-width:300px; max-width:640px; margin:0 auto;}
+.bodyPad-topEnd{ padding:50px 0; background:#F2F2F2;}
+.min-width{ position:relative; min-width:320px; max-width:640px; display:-webkit-box; display:box; margin:0 auto;}
+.min-width02{ position:relative; min-width:290px; max-width:610px; display:-webkit-box; display:box; margin:0 auto;}
+.content{ position:relative; min-width:320px; max-width:640px; min-height:400px; margin:0 auto;}
+.line-height10{ height:10px; clear:both; background:#F2F2F2; overflow:hidden;}
+
+
+/*头部*/
+.header{ width:100%; height:50px; position:fixed; top:0; left:0; z-index:200;}
+.header .box{ height:50px; background:#F5F5F5; border-bottom:solid 1px #ddd;}
+.header .back{ width:50px; height:50px; display:-webkit-box; display:box; background:url(../images/Top_back.png) no-repeat center center; -webkit-background-size:80%!important; background-size:80%!important; cursor:pointer;}
+.header .logo{ background:url(../images/Logo02.png) no-repeat center center; -webkit-background-size:117px 40px!important; background-size:117px 40px!important;}
+.header .logout{ height:30px; line-height:30px;}
+.header .logout a{ background:#ddd;}
+.header02{ position:static;}
+
+
+/*底部*/
+.footer{ width:100%; height:50px; position:fixed; bottom:0; left:0; z-index:200;}
+.footer .box{ height:50px; background:#F5F5F5; border-top:solid 1px #ddd;}
+.footer02{ position:static;}
+
+
+/*用户登录*/
+.login-box{ top:34%; left:10%; right:10%; position:absolute; z-index:20;}
+.login-box .text{ width:90%; height:30px; line-height:30px; background-color:rgba(0,0,0,0.6); margin:5px 0; padding:8px 5% 8px 5%; border:none; vertical-align:top; color:#fff; border:1px rgba(0,0,0,0) solid;}
+.login-box .text:focus{ background-color:rgba(0,0,0,0.1); border:1px rgba(0,0,0,0.1) solid; color:#000000;}
+.login-box .btn{ width:100%; height:46px; line-height:44px; display:block; background-color:rgba(0,102,153,1); color:#ccc; padding:0;}
+
+
+/*首页*/
+.index-tips{}
+.index-tips h3{ border-bottom:solid 1px #efefef; font-weight:bold;}
+.index-tips p{ height:100px; line-height:20px; overflow:auto;}
+
+.index-system{}
+.index-system h3{ border-bottom:solid 1px #efefef; font-weight:bold;}
+.index-system ul{}
+.index-system ul li{}
+.index-system ul li h5{ font-weight:bold; height:50px; line-height:50px; padding-left:50px; -webkit-background-size:30px 30px!important; background-size:30px 30px!important; border-bottom:solid 1px #efefef;}
+.index-system ul li h5.i1{ background:url(../images/Icon_home01.png) no-repeat 10px center;}
+.index-system ul li h5.i2{ background:url(../images/Icon_home02.png) no-repeat 10px center;}
+.index-system ul li h5.i3{ background:url(../images/Icon_home03.png) no-repeat 10px center;}
+.index-system ul li span{ border-bottom:solid 1px #cef0f7; height:auto!important; height:20px; min-height:20px; line-height:20px; padding:10px 30px 10px 50px; background:url(../images/icon_dot.png) no-repeat 30px 17px #edfcff; color:#006379;}
+.index-system ul li span:before{ position:absolute; content:""; right:20px; top:50%; margin-top:-5px; width:6px; height:10px; background:url(../images/icon_right.png) no-repeat center center; background-size:6px 10px;}
+.index-system ul li font{ font-weight:bold;}
+
+
+/*考评说明*/
+.explain-tips{}
+.explain-tips h3{ border-bottom:solid 1px #efefef; font-weight:bold;}
+.explain-tips .txt{ line-height:20px; left:0px; right:0px; top:110px; bottom:125px; overflow:auto;}
+.explain-tips .btnDl{ left:0; right:0; bottom:50px;}
+.explain-tips .btn{ width:100%; height:40px; line-height:40px; background:#006379; display:block;}
+
+
+/*考评打分*/
+.scoring-btnDiv{ height:34px; line-height:34px;}
+.scoring-btnDiv span a{ text-decoration:underline;}
+.scoring-btnDiv .btn{ right:15px; top:10px; width:200px; height:34px; line-height:30px; background:#006379; border:none;}
+
+.scoring-list{}
+.scoring-list h5{ border-top:solid 1px #ccc; border-bottom:solid 1px #ccc; height:40px; line-height:20px; background:#efefef; font-weight:bold;}
+.scoring-list h5 span{ border-right:solid 1px #ccc; }
+.scoring-list h5 .operating{ border-right:none; }
+.scoring-list span{ padding:10px; display:block; position:relative;}
+.scoring-list .name{ width:70px;}
+.scoring-list .report{ width:60px;}
+.scoring-list .report a{ text-decoration:underline;}
+.scoring-list .operating{ width:70px;}
+.scoring-list .box{ left:0px; top:156px; bottom:60px; overflow:auto;}
+.scoring-list ul{ min-width:320px; max-width:640px; margin:0 auto;}
+.scoring-list ul li{ border-bottom:solid 1px #ccc;}
+.scoring-list ul li .text{ width:100%; border:solid 1px #ddd; background:#f6f6f6; font-weight:bold; height:30px; color:#006379;}
+.scoring-list ul li.acur{ background:#edfcff;}
+
+
+/*述职报告*/
+.debriefings{}
+.debriefings h3{ border-bottom:solid 1px #efefef; font-weight:bold;}
+.debriefings .title{ font-weight:bold;}
+.debriefings .txt{ position:fixed; left:15px; right:15px; bottom:50px; top:110px; overflow:auto; line-height:20px;}
+
+
+/*弹出提示框*/
+.popUp-layer{ left:0px; top:0px; background:rgba(0,0,0,0.4); height:100%; z-index:999;}
+.popUp-layer .box{ width:250px; top:50%; left:50%; margin:0 0 0 -125px;}
+.popUp-layer .box h4{ font-weight:bold; border-bottom:solid 1px #ccc; background:#eee; border-radius:6px 6px 0 0; background:url(../images/Icon_close.png) no-repeat 95% center; background-size:25px 25px;}
+.popUp-layer .box h3{ font-weight:bold; border-bottom:solid 1px #ccc; background:#eee; border-radius:6px 6px 0 0;}
+.popUp-layer .box h3 em{ display:inline-block; width:25px; height:25px; float:right; margin-right:10px; background:url(../images/Icon_close.png) no-repeat left center; background-size:25px 25px; cursor:pointer;}
+.popUp-layer .box .btn{ width:60%; height:34px; line-height:34px; background:#006379; cursor:pointer; margin:auto;}
+.popUp-layer .box .text02{ width:205px; height:100px; line-height:18px; border:solid 1px #ccc; background:#f8f8f8;}
+.popUp-layer .height180{ height:180px; margin-top:-90px;}
+.popUp-layer .height170{ height:170px; margin-top:-85px;}
+.popUp-layer .height240{ height:240px; margin-top:-120px;}
+
+
+/*返回顶部*/
+.backTop{ width:40px; height:40px; background:rgba(0,0,0,0.7); right:10px; bottom:10px; z-index:55; cursor:pointer;}
+.backTop span{ display:block; background:url(../images/BackTop.png) no-repeat center center; height:40px;}
+.backTop span a{ height:40px;}

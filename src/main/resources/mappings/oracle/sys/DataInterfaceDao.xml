@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.sys.dao.DataInterfaceDao">
+	<select id="getDataList" parameterType="map" resultType="upperCaseKeyMap">
+		SELECT * FROM sys_data_interface t
+		<where>
+			<if test="TYPE != null and TYPE != ''">
+				AND T.TYPE like '%${TYPE}%'
+			</if>
+			<if test="NAME != null and NAME != ''">
+				AND T.NAME like '%${NAME}%'
+			</if>
+			<if test="STATUS != null and STATUS != ''">
+				AND T.STATUS =#{STATUS}
+			</if>
+		</where>
+		ORDER BY T.TYPE
+	</select>
+	<insert id="insertData" parameterType="map">
+		insert into sys_data_interface
+		select
+		#{TYPE},
+		#{NAME},
+		#{STATUS},
+		#{EXCU_PRO},
+		#{EXCU_CYCLE},
+		#{EXCU_MONTH},
+		#{EXCU_DATE},
+		#{EXCU_HOUR},
+		#{EXCU_MIN},
+		#{LAST_TIME},
+		#{OPERATOR},
+		#{REMARKS},
+		#{HREF}
+		from dual
+	</insert>
+	<update id="updateData" parameterType="map">
+		update sys_data_interface set
+		NAME = #{NAME},
+		STATUS = #{STATUS},
+		EXCU_PRO = #{EXCU_PRO},
+		EXCU_CYCLE = #{EXCU_CYCLE},
+		EXCU_MONTH = #{EXCU_MONTH},
+		EXCU_DATE = #{EXCU_DATE},
+		EXCU_HOUR = #{EXCU_HOUR},
+		EXCU_MIN = #{EXCU_MIN},
+		LAST_TIME = #{LAST_TIME},
+		OPERATOR = #{OPERATOR},
+		REMARKS = #{REMARKS},
+		HREF = #{HREF}
+		where type=#{TYPE}
+	</update>
+	<select id="getDataInfo" parameterType="map" resultType="upperCaseKeyMap">
+		SELECT * FROM sys_data_interface t
+		<where>
+			<if test="TYPE != null and TYPE != ''">
+				AND T.TYPE =#{TYPE}
+			</if>
+			<if test="STATUS != null and STATUS != ''">
+				AND T.STATUS =#{STATUS}
+			</if>
+		</where>
+	</select>
+	<select id="excuPro" parameterType="map">
+		${SQL}
+	</select>
+</mapper>

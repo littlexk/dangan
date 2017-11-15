@@ -1,0 +1,439 @@
+/*!
+ * Copyright &copy; 2012-2013 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ */
+html,body {scrollbar-face-color:#ffffff;scrollbar-highlight-color:#ffffff;scrollbar-darkshadow-color:#ffffff;padding:0;}
+img {max-width:auto;} h1 {font-size:30px;} h1, h2, h3, h4, h5, h6 {margin:0;} a {outline: none;} a:active {star:expression(this.onFocus=this.blur());}
+body,label,input,button,select,textarea,.uneditable-input,.navbar-search .search-query {font-family: "Microsoft YaHei" ! important;font-size:13px;_font-size:12px;}
+.input-append .add-on,.input-prepend .add-on,.input-append .btn,.input-prepend .btn,.input-append .btn-group > .dropdown-toggle,.input-prepend .btn-group > .dropdown-toggle {vertical-align: middle;}
+label {display:inline-block;margin-bottom:0;} input[type="radio"],input[type="checkbox"] {margin:-2px 3px;*margin-top:1px;}
+input[disabled],select[disabled],textarea[disabled],input[readonly],select[readonly],textarea[readonly] {cursor:auto;background-color:#f3f3f3;}
+.input-prepend input,.input-append input,.input-prepend select,.input-append select,.input-prepend .uneditable-input,.input-append .uneditable-input {position:static;}
+.control-group {padding-bottom:8px;margin-bottom:0;border-bottom:1px dotted #f1f1f1;} legend + .control-group {margin-top:8px;}
+.controls .lbl {display:inline-block;padding-top:5px;margin-bottom:0;vertical-align:middle;}
+.measure-input {background:url("../images/ruler.gif") repeat-x scroll 0 bottom transparent;}
+.input-small{width:120px;} .input-medium {width:163px;}.input-xxlarge {width:460px;}
+.help-block,.help-inline {color:#aaaaaa;} .alert {margin-bottom:10px;}
+.form-search label{margin-left:10px;} .form-search span label{margin-left:0;}
+.form-horizontal {margin:0 20px;} .form-horizontal .control-group {margin-bottom:8px;}
+.form-horizontal .control-label {padding-top:3px;} .form-horizontal .controls {text-align:left;}
+.form-horizontal .controls label.error {background-position:0 2px;}
+.collapse {*display:none;_position:static;} .collapse.in {*display:block;}
+.close {opacity:0.3;filter:alpha(opacity=30);} .close:hover {opacity:0.8;filter:alpha(opacity=80);}
+a.btn {*padding:4px 10px 4px;*border:1px solid #cccccc;}
+a.btn-primary,a.btn-primary:hover,a.btn-warning,a.btn-warning:hover,a.btn-danger,a.btn-danger:hover,a.btn-success,a.btn-success:hover,
+	a.btn-info,a.btn-info:hover,a.btn-inverse,a.btn-inverse:hover {*padding:4px 10px 3px;}
+.nav,.breadcrumb {margin-bottom:10px;}
+.nav-list li a {margin-top:5px;margin-bottom:5px;_padding-top:6px;} .nav-list li a i{_margin-top:-1px;}
+.pagination .controls a{border:0;} .pagination .controls input{border:0;color:#999;width:30px;padding:0;margin:-3px 0 0 0;text-align:center;}
+.modal-backdrop {background-color:#ffffff;}
+.modal-backdrop,.modal-backdrop.fade.in {opacity:0.5;filter:alpha(opacity=50);}
+.modal.tree {width:300px;margin:-250px 0 0 -180px;*margin:-200px 0 0 -150px;}
+.modal.tree .modal-body {height:260px;padding:20px 25px;}
+.accordion-heading,.table th {white-space:nowrap;-webkit-border-radius:3px 3px 0 0;-moz-border-radius:3px 3px 0 0;border-radius:3px 3px 0 0;background-color:#fbfbfb;
+	background-image:-moz-linear-gradient(top, #ffffff, #f5f5f5);background-image:-ms-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f5f5f5));background-image:-webkit-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image:-o-linear-gradient(top, #ffffff, #f5f5f5);background-image:linear-gradient(top, #ffffff, #f5f5f5);
+	background-repeat:repeat-x;filter:progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0);}
+.accordion-heading {float:inherit;width:100%;} .accordion-heading a:hover,.dropdown a:hover {text-decoration:none;background:none;}
+.accordion-heading .accordion-toggle {font-family:"Microsoft YaHei" ! important;font-size:14px;_padding-top:10px;_padding-bottom:8px;}
+.accordion-heading .accordion-toggle i {_margin-top:-1px;} .accordion-inner {padding:8px 13px 3px 13px;} 
+#left,#right,#openClose {float:left;} #openClose {width:8px;margin:0 1px;cursor:pointer;}
+#openClose,#openClose.close {background:#fdfdfd url("../images/openclose.png") no-repeat -29px center;}
+#openClose.close {background-position:1px center;}
+
+
+::-webkit-scrollbar { width: 12px; } /* Track */ 
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px #DDDDDD; -webkit-border-radius: 10px; border-radius: 10px; } /* Handle */
+::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; border-radius: 10px; background: #DDDDDD; -webkit-box-shadow: inset 0 0 6px #DDDDDD; } 
+::-webkit-scrollbar-thumb:window-inactive { background: #DDDDDD; }
+
+
+.container-fluid{
+	padding-left:0px;
+	padding-right: 0px;
+}
+.container-fluid .row-fluid{
+	padding-left:5px;
+	padding-right:7px;
+}
+
+.accordion-inner .table thead tr {display:block;}
+.accordion-inner .table tbody {
+			    display: block;
+			    height: 200px;
+			    overflow: auto;
+			}
+.accordion-inner .table th {width: 100px}
+.accordion-inner .table td {width: 100px}
+
+
+.navbar-inner {
+    background:-moz-linear-gradient(left,#a91a08,#e51c01);/*Mozilla*/
+	background:-webkit-gradient(linear,0 50%,100% 50%,from(#a91a08),to(#e51c01));/*Old gradient for webkit*/
+	background:-webkit-linear-gradient(left,#a91a08,#e51c01);/*new gradient for Webkit*/
+	background:-o-linear-gradient(left,#a91a08,#e51c01); /*Opera11*/
+	background: linear-gradient(left, #a91a08, #e51c01);
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#a91a08',endColorStr='#e51c01',gradientType='1'); 
+	background: -ms-linear-gradient(left,  #a91a08 0%,#e51c01 100%); 
+    background-repeat: repeat-x;
+    border: 1px solid #a91a08;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    min-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nav-tabs {
+    border-bottom: 0px solid #ddd;
+}
+.navbar .pull-left > .active > a, .navbar .pull-left > .active > a:hover, .navbar .pull-left > .active > a:focus {
+     color: #fff;
+    text-decoration: none;
+    background-color:  transparent;
+    font-weight: bold;
+    transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -webkit-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.5s linear;
+     border-bottom: medium solid #FE9D10;
+}
+.navbar .pull-left>li>a:focus, .navbar .pull-left>li>a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color:  transparent;
+    transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -webkit-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.5s linear;
+    font-weight: bold;
+    border-bottom: medium solid #FE9D10;
+}
+.navbar .pull-left > li  {
+    padding-top:5px;
+    padding-left: 2px;
+}
+.navbar .pull-left > li > a {
+    font-family: "Telex",sans-serif;
+    padding-top:11px;
+    padding-bottom:11px;
+    padding-left: 16px;
+    padding-right:16px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+.navbar .nav > .active > a, .navbar .pull-left > .active > a:hover, .navbar .pull-left > .active > a:focus {
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.125) inset;
+    color: #fff;
+    text-decoration: none;
+}
+/*列表选项卡css*/
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    padding-bottom:11px;
+    color: black;
+    font-weight:bold;
+    margin-top:0px;
+}
+
+.nav-tabs >li >a {
+    color: black;
+    text-decoration: none;
+    margin-top:9px;
+    padding-bottom:3px;
+    background-color: #DDDDDD;
+    border: 1px solid #f5f5f5;
+}
+
+.nav-tabs >li >a:hover {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    padding-bottom:11px;
+    margin-top:0px;
+    color: black;
+}
+.nav {
+    margin-bottom: 0;
+}
+/*查询表单样式*/
+.breadcrumb {
+    margin-bottom: 10px;
+    border-radius: 0px;
+}
+/*表格样式*/
+.accordion-heading, .table th {
+    background-color: #a7bdda;
+    background-image: -moz-linear-gradient(center top , #eb7f4c, #eb7f4c);
+    background-image: -ms-linear-gradient(top, #eb7f4c, #eb7f4c);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eb7f4c), to(#eb7f4c));
+    background-image: -webkit-linear-gradient(top, #eb7f4c, #eb7f4c);
+    background-image: -o-linear-gradient(top, #eb7f4c, #eb7f4c);
+    background-image: linear-gradient(top, #eb7f4c, #eb7f4c);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#eb7f4c',endColorStr='#eb7f4c',gradientType='1'); 
+	background: -ms-linear-gradient(left,  #eb7f4c 0%,#eb7f4c 100%); 
+    background-repeat: repeat-x;
+    border-radius: 0px 0px 0 0;
+    white-space: nowrap;
+    color: white;
+}
+.table-hover tbody tr:hover > td,
+.table-hover tbody tr:hover > th {
+  background-color: #fef4e8;
+}
+.tableChecked{
+    background-color: #f9e6cf;
+}
+.pagination ul > li > a {
+    color: black;
+}
+.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
+    background-color: #FF9D10;
+    color: white;
+}
+
+.input-append>.btn {
+    background-color: #fff;
+    background-image: linear-gradient(#fff, #fff 5%, #fff);
+    background-repeat: no-repeat;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+    background-color: white;
+    background-image: linear-gradient(to bottom, white, white);
+    background-image: -moz-linear-gradient(center top , white, white);
+    background-image: -ms-linear-gradient(top, white, white);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(white));
+    background-image: -webkit-linear-gradient(top, white, white);
+    background-image: -o-linear-gradient(top, white, white);
+    background-image: linear-gradient(top, white, white);
+    background-repeat: repeat-x;
+    border:1px solid #FF9D10;
+    padding: 6px 12px;
+    box-shadow: 0 0px 0 rgba(255, 255, 255, 0.2) inset, 0 0px 0px rgba(0, 0, 0, 0.05);
+    color: #3b3b3b;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: #FF9D10;
+    background-image: linear-gradient(to bottom, #FF9D10, #FF9D10);
+    background-image: -moz-linear-gradient(center top , #FF9D10, #FF9D10);
+    background-image: -ms-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF9D10), to(#FF9D10));
+    background-image: -webkit-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: -o-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: linear-gradient(top, #FF9D10, #FF9D10);
+    color: white;
+}
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: white;
+  background-color: #FF9D10;
+  *background-color: #FF9D10;
+}
+
+.btn-success {
+    background-color: white;
+    background-image: linear-gradient(to bottom, white, white);
+    background-image: -moz-linear-gradient(center top , white, white);
+    background-image: -ms-linear-gradient(top, white, white);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(white));
+    background-image: -webkit-linear-gradient(top, white, white);
+    background-image: -o-linear-gradient(top, white, white);
+    background-image: linear-gradient(top, white, white);
+    background-repeat: repeat-x;
+    border: 1px solid #FF9D10;
+    padding: 6px 12px;
+    box-shadow: 0 0px 0 rgba(255, 255, 255, 0.2) inset, 0 0px 0px rgba(0, 0, 0, 0.05);
+    color: #3b3b3b;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-success:hover {
+    background-color: #FF9D10;
+    background-image: linear-gradient(to bottom, #FF9D10, #FF9D10);
+    background-image: -moz-linear-gradient(center top , #FF9D10, #FF9D10);
+    background-image: -ms-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF9D10), to(#FF9D10));
+    background-image: -webkit-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: -o-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: linear-gradient(top, #FF9D10, #FF9D10);
+    color: white;
+}
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  color: white;
+  background-color: #FF9D10;
+  *background-color: #FF9D10;
+}
+
+.btn-back {
+    background-color: white;
+    background-image: linear-gradient(to bottom, white, white);
+    background-image: -moz-linear-gradient(center top , white, white);
+    background-image: -ms-linear-gradient(top, #FF9D10, white);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(white));
+    background-image: -webkit-linear-gradient(top, white, white);
+    background-image: -o-linear-gradient(top, white, white);
+    background-image: linear-gradient(top, white, white);
+    background-repeat: repeat-x;
+    border: 1px solid #FF9D10;
+    padding: 6px 12px;
+    box-shadow: 0 0px 0 rgba(255, 255, 255, 0.2) inset, 0 0px 0px rgba(0, 0, 0, 0.05);
+    color: #3b3b3b;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-back:hover {
+    background-color: #FF9D10;
+    background-image: linear-gradient(to bottom, #FF9D10, #FF9D10);
+    background-image: -moz-linear-gradient(center top , #FF9D10, #FF9D10);
+    background-image: -ms-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF9D10), to(#FF9D10));
+    background-image: -webkit-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: -o-linear-gradient(top, #FF9D10, #FF9D10);
+    background-image: linear-gradient(top, #FF9D10, #FF9D10);
+    color: white;
+}
+/*左边菜单*/
+.accordion-heading{
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(center top , #f5f5f5, #f5f5f5);
+    background-image: -ms-linear-gradient(top, #f5f5f5, #f5f5f5);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f5f5f5));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #f5f5f5);
+    background-image: -o-linear-gradient(top, #f5f5f5, #f5f5f5);
+    background-image: linear-gradient(top, #f5f5f5, #f5f5f5);
+    background-repeat: repeat-x;
+    border-radius: 0;
+    white-space: nowrap;
+}
+.accordion-heading > a {
+	color: #3b3b3b;
+}
+.nav-list >li> a{
+    color: #3b3b3b;
+}
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+    background-color: #FF9D10;
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.nav-list > li > a, .nav-list .nav-header {
+    margin-left: -28px;
+    margin-right: -28px;
+    padding-left: 35px;
+}
+#menu .accordion-inner{
+	background-color: #f5f5f5;
+}
+
+#footer {
+	margin: 8px 0 0 0;
+	padding: 5px 0 0 0;
+	font-size: 10px;
+	text-align: center;
+	border-top: 2px solid #a0aab2;
+	background-color: #a0aab2;
+	color: white;
+}
+#footer>a {
+	color: white;
+}
+
+.navbar .pull-right>li>a:focus, .navbar .pull-right>li>a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color:  transparent;
+    transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -webkit-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.5s linear;
+    font-weight: bold;
+    border-bottom: none;
+}
+.navbar .pull-right > li  {
+    padding-top:5px;
+    padding-left: 2px;
+}
+.navbar .pull-right > li > a {
+    font-family: "Telex",sans-serif;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left: 8px;
+    padding-right:8px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, 
+.navbar .nav li.dropdown.active > .dropdown-toggle, 
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: transparent;
+    color: #fff;
+}
+/**下拉选项框样式*/
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  color: #ffffff;
+  background-color: #27a0e5;
+  background-image: -moz-linear-gradient(top, #FF9D10, #FF9D10);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF9D10), to(#FF9D10));
+  background-image: -webkit-linear-gradient(top, #FF9D10, #FF9D10);
+  background-image: -o-linear-gradient(top, #FF9D10, #FF9D10);
+  background-image: linear-gradient(to bottom, #FF9D10, #FF9D10);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9D10', endColorstr='#FF9D10', GradientType=0);
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  background-color: #FF9D10;
+  background-image: -moz-linear-gradient(top, #FF9D10, #FF9D10);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF9D10), to(#FF9D10));
+  background-image: -webkit-linear-gradient(top, #FF9D10, #FF9D10);
+  background-image: -o-linear-gradient(top, #FF9D10, #FF9D10);
+  background-image: linear-gradient(to bottom, #FF9D10, #FF9D10);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9D10', endColorstr='#FF9D10', GradientType=0);
+}
+
+.org-icon{
+	width:33px;
+	height:33px;
+}
+.icon-exit{
+	background:url('../images/index/top.png') -99px -33px no-repeat;
+}
+.icon-exit:hover{
+	background:url('../images/index/top.png') -99px -0px no-repeat;
+}
+.icon-home{
+	background:url('../images/index/top.png') -0px -33px no-repeat;
+}
+.icon-home:hover{
+	background:url('../images/index/top.png') -0px -0px no-repeat;
+}
+
+.icon-user2{
+	background:url('../images/index/top.png') -33px -33px no-repeat;
+}
+.icon-user2:hover{
+	background:url('../images/index/top.png') -33px -0px no-repeat;
+}
+
+.icon-full{
+	background:url('../images/index/top.png') -66px -33px no-repeat;
+}
+.icon-full:hover{
+	background:url('../images/index/top.png') -66px -0px no-repeat;
+}

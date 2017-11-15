@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.sys.dao.MailDao">
+	<select id="searchMailByConditions" parameterType="map" resultType="upperCaseKeyMap">
+		SELECT * FROM SYS_MAIL T
+		<where>
+			<if test="LOGIN_NAME != null and LOGIN_NAME != ''">
+				AND T.LOGIN_NAME like '%${LOGIN_NAME}%'
+			</if>
+			<if test="ID != null and ID != ''">
+				AND T.ID = #{ID}
+			</if>
+		</where>
+		ORDER BY T.DEFAULT_FLAG DESC
+	</select>
+	
+	<select id="countMailByConditions" parameterType="map" resultType="int">
+		SELECT COUNT(T.ID) FROM SYS_MAIL T 
+		<where>
+			<if test="LOGIN_NAME != null and LOGIN_NAME != ''">
+				AND T.LOGIN_NAME = #{LOGIN_NAME}
+			</if>
+		</where>
+	</select>
+	
+	<select id="countDefaultMail" resultType="int">
+		SELECT COUNT(T.ID) FROM SYS_MAIL T 
+		<where>
+			AND T.DEFAULT_FLAG = '1'
+		</where>
+	</select>
+	
+	<select id="getDefaultMail" resultType="map">
+		SELECT * FROM SYS_MAIL T WHERE T.DEFAULT_FLAG = '1'
+	</select>
+	
+	<update id="cancelDefault">
+		UPDATE SYS_MAIL T SET T.DEFAULT_FLAG = '0' WHERE T.DEFAULT_FLAG = '1'
+	</update>
+	
+	<update id="setDefaultMailRandomly">
+		UPDATE SYS_MAIL T SET T.DEFAULT_FLAG = '1' WHERE ROWNUM = 1
+	</update>
+	
+	<update id="updateMail" parameterType="map">
+		UPDATE SYS_MAIL T
+		<set>
+			T.ID = T.ID
+			<if test="LOGIN_NAME != null and LOGIN_NAME != ''">
+				,T.LOGIN_NAME = #{LOGIN_NAME}
+			</if>
+			<if test="PASSWORD != null and PASSWORD != ''">
+				,T.PASSWORD = #{PASSWORD}
+			</if>
+			<if test="SMTP_HOST != null and SMTP_HOST != ''">
+				,T.SMTP_HOST = #{SMTP_HOST}
+			</if>
+			<if test="SMTP_SSL != null and SMTP_SSL != ''">
+				,T.SMTP_SSL = #{SMTP_SSL}
+			</if>
+			<if test="SMTP_PORT != null and SMTP_PORT != ''">
+				,T.SMTP_PORT = #{SMTP_PORT}
+			</if>
+			<if test="DEFAULT_FLAG != null and DEFAULT_FLAG != ''">
+				,T.DEFAULT_FLAG = #{DEFAULT_FLAG}
+			</if>
+		</set>
+		<where>
+			<if test="ID != null and ID != ''">
+				AND T.ID = #{ID}
+			</if>
+		</where>
+	</update>
+	
+	<insert id="insertMail" parameterType="map">
+		INSERT INTO SYS_MAIL VALUES(SEQ_SYS_MAIL.NEXTVAL,#{LOGIN_NAME},#{PASSWORD},#{SMTP_HOST},#{SMTP_PORT},#{SMTP_SSL},'0','0')
+	</insert>
+	
+	<delete id="deleteMail" parameterType="map">
+		DELETE FROM SYS_MAIL
+		<where>
+			AND ID IN 
+			<foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</where>
+	</delete>
+</mapper>

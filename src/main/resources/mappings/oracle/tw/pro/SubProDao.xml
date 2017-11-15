@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.van.modules.tw.dao.pro.SubProDao">
+    <select id="list" parameterType="map" resultType="upperCaseKeyMap">
+        select t.* from T_TW_PRO_MANAGE t
+        left outer join T_TW_PRI_PRO a on t.PRI_PRO_ID = a.ID
+        <where>
+            <if test="PRI_PRO_ID !=null and PRI_PRO_ID !=''">
+               AND	t.PRI_PRO_ID = #{PRI_PRO_ID}
+            </if>
+            <if test="PRO_NAME !=null and PRO_NAME !=''">
+                AND	t.PRO_NAME  like  '%${PRO_NAME}%'
+            </if>
+            <if test="TYPE !=null and TYPE !=''">
+                AND a.TYPE = #{TYPE}
+            </if>
+            and nvl(t.delete_falg,'0')!='1'
+        </where>
+    </select>
+
+    <insert id="insert" parameterType="map">
+        insert into  T_TW_PRO_MANAGE (
+        <trim prefix=""  suffixOverrides=",">
+			ID,SERIAL,PRI_PRO_ID,PRO_NAME,PRO_STD,UNIT,NUM,STD_PRICE,COST_PRICE,REMARK,CREATE_DATE,CREATE_ID,DELETE_FALG,DELETE_ID,DELETE_DATE
+        </trim>
+        )values(
+        <trim prefix=""  suffixOverrides=",">
+			SEQ_T_TW_PRO_MANAGE.Nextval,#{SERIAL},#{PRI_PRO_ID},#{PRO_NAME},#{PRO_STD},#{UNIT},#{NUM},#{STD_PRICE},#{COST_PRICE},#{REMARK},#{CREATE_DATE},#{CREATE_ID},#{DELETE_FALG},#{DELETE_ID},#{DELETE_DATE}
+        </trim>
+        )
+    </insert>
+    <select id="get" parameterType="string" resultType="upperCaseKeyMap">
+        SELECT t.* FROM  T_TW_PRO_MANAGE t where t.ID=#{id}
+    </select>
+
+    <update id="update"  parameterType="map">
+        update  T_TW_PRO_MANAGE
+        <set>
+            SERIAL = #{SERIAL},PRI_PRO_ID = #{PRI_PRO_ID},PRO_NAME = #{PRO_NAME},PRO_STD = #{PRO_STD},UNIT = #{UNIT},NUM = #{NUM},STD_PRICE = #{STD_PRICE},COST_PRICE = #{COST_PRICE},REMARK = #{REMARK},CREATE_DATE = #{CREATE_DATE},CREATE_ID = #{CREATE_ID},DELETE_FALG = #{DELETE_FALG},DELETE_ID = #{DELETE_ID},DELETE_DATE = #{DELETE_DATE}
+        </set>
+        where ID = #{ID}
+    </update>
+    <update id="delete" parameterType="map">
+        update  T_TW_PRO_MANAGE set DELETE_FALG=#{DELETE_FALG},DELETE_ID=#{DELETE_ID},DELETE_DATE=#{DELETE_DATE}
+        <where>
+            AND ID IN
+            <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </update>
+</mapper>

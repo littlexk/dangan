@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+a:hover{ color:#00a0e9;}
+.buleColor{ color:#00a0e9;}
+
+/**/
+.Header{ background:#00a0e9;}
+.Header .personal .btnDiv a{ background:url(../images/blue/Top_frBtn.png) no-repeat;}
+.Header .lan .theme a:hover{ background:#00a0e9; border-color:#00a0e9;}
+.Header .nav a:hover,.Header .nav a.acur{ color:#00a0e9;}
+.Header .notice ul li .btnCl{ background:#00a0e9; color:#fff;}
+.Header .notice ul li .btnCl:hover{ background:#27bbff; color:#fff;}
+.Header .daiban ul li .btnCl{ background:#1abc9c; color:#fff;}
+.Header .daiban ul li .btnCl:hover{ background:#00a0e9; color:#fff;}
+.Header .newPage a:hover{ border:solid 1px #00a0e9; background:#00a0e9; color:#fff;}
+.Header .menuMore ul li a:hover{ color:#00a0e9;}
+
+.Submenu li a:hover,.Submenu li a:hover i{ color:#00a0e9;}
+.Submenu li h3 a:hover,.Submenu li h3 a.acur{ color:#00a0e9;}
+.Submenu li .sub span b a:hover{ color:#00a0e9;}
+.Submenu li .sub span b a.acur,.Submenu li .sub span b a.acur i{ color:#00a0e9;}
+.Submenu2 li .sub em a:hover{ color:#00a0e9;}
+.Submenu_other li a:hover,.Submenu_other li a.acur{ color:#00a0e9;}
+
+.Addmenu_btn a:hover{ background:#00a0e9; border-color:#00a0e9;}
+.Addmenu_btn02 a:hover{ color:#00a0e9;}
+.Shrink{ color:#71808f; background:#34495e;}
+
+.Help_box dl dt{ background:#3498db;}
+.Help_box ul li em{ background:#e67e22;}
+
+.Login_box ul .btn{ background:#58b957;}
+.Login_box ul .btn:hover{ background:#51cd6e; color:#fff;}
+
+.Setting_menu .save a{ background:#18a9ea;}
+.Setting_menu .save a:hover{ background:#27bbff; color:#fff;}
+.Setting_menu .save_btnDiv a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+.Setting_menu .gou{ color:#3498db;}
+
+.NewPage_tab .btnCreate a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+.Page_design .btnDiv a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+.Page_design .business .search .btnSearch:hover{ border-color:#00a0e9; color:#00a0e9;}
+.Page_design .controls li em,.Page_design .controls1 li em{ color:#00a0e9;}
+.Page_design .controls li:hover{ color:#00a0e9;}
+.Page_design .controls li:hover em{ border-color:#00a0e9;}
+
+.Page_design .controls1 ul li:hover{ border-color:#00a0e9; color:#00a0e9;}
+
+.H_daiban ul li.title{ background:#34495e;}
+.H_search .btnSearch{ color:#fff; background:#1abc9c;}
+
+.Setting_nav .btnDiv .btn01{ background:#18a9ea; color:#fff;}
+.Setting_nav .btnDiv .btn02{ background:#fff; border:solid 1px #96a6a7;}
+.Setting_nav .btnDiv .btn01:hover,.Setting_nav .btnDiv .btn02:hover{ background:#27bbff; border-color:#27bbff; color:#fff;}
+.Setting_nav .gou{ color:#3498db;}
+
+.Mibble_tab dl a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+
+.Module_menu li a:hover{ border:solid 1px #00a0e9;}
+
+.Module_search .btnSearch{ color:#fff; background:#27ae60;}
+.Module_search .btnSearch:hover{ color:#fff; background:#51cd6e;}
+.Module_search02 .btnSearch{ color:#fff; background:#27ae60;}
+.Module_search02 .btnSearch:hover{ color:#fff; background:#51cd6e;}
+.Module_search03 .btnSearch{ color:#fff; background:#27ae60;}
+.Module_search03 .btnSearch:hover{ color:#fff; background:#51cd6e;}
+
+.Module_searchDh .btnDiv a{ color:#fff; background:#27ae60;}
+.Module_searchDh .btnDiv a:hover{ color:#fff; background:#51cd6e;}
+
+.Module_searchDh02 .btnDiv a{ color:#fff; background:#27ae60;}
+.Module_searchDh02 .btnDiv a:hover{ color:#fff; background:#51cd6e;}
+
+.Module_addInfo ul li .btn01{ color:#fff; background:#27ae60;}
+.Module_addInfo ul li .btn01:hover{ color:#fff; background:#51cd6e;}
+.Module_addInfo ul li .btn02{ background:#ecf0f1; border:solid 1px #95a5a6;}
+.Module_addInfo ul li .btn02:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+
+.Module_btnDiv dl a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+.Module_btnDiv02 dl a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+
+.Module_ztreeBtn a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+
+.Module_lan .fr a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+
+.Module_table .operate a:hover{ color:#00a0e9;}
+.Module_table02 .operate a:hover{ color:#00a0e9;}
+
+.System_btnDiv dl a:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+.System_addInfo ul li .btn01{ color:#fff; background:#18a9ea;}
+.System_addInfo ul li .btn02{ background:#fff; border:solid 1px #96a6a7;}
+.System_addInfo .gou{ color:#00a0e9;}
+.System_addInfo .fdj:hover{ background:#51cd6e; color:#fff;}
+
+.System_btnDiv .btnSearch{ color:#fff; background:#27ae60; border-color:#27ae60;}
+.System_btnDiv .btnSearch:hover{ color:#fff; background:#51cd6e; border-color:#51cd6e;}
+
+.System_logSearch .btnInquiry{ color:#fff; background:#27ae60; border-color:#27ae60;}
+.System_logSearch .btnInquiry:hover{ color:#fff; background:#51cd6e; border-color:#51cd6e;}
+
+
+.Workflow_property ul li .btn01{ color:#fff; background:#27ae60;}
+.Workflow_property ul li .btn01:hover{ color:#fff; background:#51cd6e;}
+
+
+.Preview_lan .btnSearch{ color:#fff; background:#27ae60;}
+.Preview_lan .btnSearch:hover{ color:#fff; background:#51cd6e;}
+
+.Preview_lan .btnDiv a{ color:#fff;}
+.Preview_lan .btnDiv a.a1{ background:#27ae60;}
+.Preview_lan .btnDiv a.a2{ background:#1abc9c;}
+.Preview_lan .btnDiv a.a3{ background:#3498db;}
+.Preview_lan .btnDiv a.a4{ background:#e74c3c;}
+.Preview_lan .btnDiv a.a5{ background:#fff; border:solid 1px #bdc3c7; color:#2c3e50;}
+.Preview_lan .btnDiv a:hover{ color:#fff; background:#00a0e9;}
+.Preview_lan .btnDiv a.a5:hover{ border-color:#00a0e9;}
+
+.textFrom_list ul li .btn01{ color:#fff; background:#27ae60; border:solid 1px #27ae60;}
+.textFrom_list ul li .btn01:hover{ color:#fff; background:#51cd6e; border:solid 1px #51cd6e;}
+.textFrom_list ul li .btn02{ background:#ecf0f1; border:solid 1px #95a5a6;}
+.textFrom_list ul li .btn02:hover{ background:#00a0e9; color:#fff; border-color:#00a0e9;}
+
+.H_personal .btnBox a.a1{ background:#3498db;}
+.H_personal .btnBox a.a2{ background:#1abc9c;}
+.H_personal .btnBox a.a3{ background:#fff; border:solid 1px #bdc3c7; color:#2c3e50;}
+.H_personal .btnBox a:hover{ background:#27bbff; color:#fff; border-color:#27bbff;}
+
+
+/*按钮*/
+.btnSearch{ background:#18a9ea;}
+.btn_processed{ background:#fff; border:solid 1px #96a6a7;}
+.btn_blue{ color:#fff; background:#00a0e9;}
+
+.Btn_submit{ background:#00a0e9; border:solid 1px #00a0e9;}
+.Btn_save{ background:#fff; border:solid 1px #00a0e9;}
+.Btn_close{ background:#fff; border:solid 1px #95a5a6;}
+.Btn_del{ background:#fff; border:solid 1px #95a5a6;}
+
+.btn_processed:hover,.btn_blue:hover,.btnSearch:hover,.Btn_submit:hover,.Btn_save:hover,.Btn_close:hover,.Btn_del:hover,.System_addInfo ul li .btn01:hover,.System_addInfo ul li .btn02:hover{ background:#27bbff; color:#fff; border-color:#27bbff;}
+.AdvancedSearch_top .col-button:hover,.AdvancedSearch_top .col:hover{ border-color:#27bbff; color:#27bbff;}
+
+.AdvancedSearch_mib .btnCol:hover{ color:#00a0e9;}

@@ -1,0 +1,190 @@
+
+.middle {
+	width: 100%;
+}
+.middle .logo {	
+	float:left;
+	margin-left:360px;
+	width:398px; 
+	height: 100px;
+	background-image: url("../images/login/logo.png"); background-repeat: no-repeat;
+}
+.middle .bg_middle {
+  margin-top:60px;
+	background-position:50% 70px;
+	width: 1300px; height: 395px;	background-image: url("../images/login/bg_middle.jpg"); background-repeat: no-repeat;
+}
+body {
+	background-color: rgb(255, 255, 255);
+}
+.login {
+	background: url("../images/login/login_box_bg.png") no-repeat; 
+	left: 768px; 
+	margin-top:102px;
+	width: 407px; height: 291px; 
+	padding-left: 30px;
+	position: absolute;
+}
+.ico {
+	background: url("../images/login/login_ico.png") no-repeat; 
+	margin: 20px 0px 0px 20px; width: 376px; 
+	left: 752px; 
+	margin-top:60px;
+	height: 44px; float: left;
+	position: absolute;
+}
+.in_list {
+	width: 290px; 
+	float: left; padding:0px;margin:0px;
+	line-height:55px;
+}
+.input {
+	margin-top: 5px; 
+}
+.userid_box {
+	width: 280px; margin-right: auto; margin-left: auto;
+}
+.pass_box {
+	width: 280px; margin-top: 10px; margin-right: auto; margin-left: auto;
+}
+.code_box {
+	width: 280px; margin-top: 10px; margin-right: auto; margin-left: auto; vertical-align: middle;
+}
+.btn_box {
+	width: 280px; margin-top: 10px; margin-right: auto; margin-left: auto; vertical-align: middle;
+}
+#userid {
+	width: 280px; height: 30px; font-size: 18px;
+}
+#pass {
+	width: 280px; height: 30px; font-size: 18px;
+}
+#tip {
+	width: 45px; color: rgb(101, 101, 101); font-size: 14px;
+}
+#code {
+	width: 80px; height: 30px;
+}
+#btn_login {
+	float: left;
+	margin-left: 13px;
+}
+.top_main {
+	margin: 0px; padding: 0px; width: 1258px; height: 101px; background-image: url("../images/login/top_bg.png"); background-repeat: no-repeat; background-color: rgb(9, 104, 152);
+}
+.top_main #btn {
+	left: 911px; top: 22px; width: 123px; height: 48px; position: relative;
+}
+#left {
+	margin: 0px; padding: 0px; width: 209px; text-decoration: none; list-style-type: none;
+}
+#left li {
+	margin: 0px; padding: 0px; width: 209px; height: 33px;
+}
+#left #left_title {
+	width: 209px; height: 52px;
+}
+.left_box {
+	margin: 0px; padding: 0px; width: 209px; background-color: rgb(240, 242, 246);
+}
+#status_bar {
+	width: 785px; height: 31px; background-image: url("../images/login/bar.png"); background-repeat: repeat-x;
+}
+#status_bar #main_title {
+	width: 80px; height: 20px; text-align: center; color: rgb(0, 0, 255); font-size: 14px; font-weight: bolder; margin-top: 5px; margin-bottom: 5px; margin-left: 25px; vertical-align: middle; float: left;
+}
+#status_bar #msg {
+	margin: 5px 5px 5px 80px; height: 20px; color: rgb(102, 102, 102); font-weight: bolder; float: right;
+}
+#status_bar #msg #date {
+	margin-left: 25px;
+}
+.main_conten {
+	width: 785px;
+}
+a {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+body {
+	margin: 0px; color: rgb(0, 0, 0); line-height: 18px; font-family: "ËÎÌו"; font-size: 9pt; -ms-scrollbar-base-color: rgb(245, 245, 245); -ms-scrollbar-3dlight-color: rgb(255, 255, 255); -ms-scrollbar-shadow-color: rgb(245, 245, 245); -ms-scrollbar-highlight-color: rgb(255, 255, 255); -ms-scrollbar-darkshadow-color: rgb(128, 128, 128); -ms-scrollbar-arrow-color: rgb(0, 102, 204); -ms-scrollbar-track-color: rgb(255, 255, 255);
+}
+.bottom_box {
+	width: 100%; height: 30px; color: rgb(255, 255, 255); font-weight: bolder; background-image: url("../images/login/bottom_bar.png"); background-repeat: repeat;
+}
+.bottom_box #copyright {
+	height: 20px; margin-top: 5px; margin-bottom: 5px; margin-left: 15px; float: left;
+}
+.bottom_box #contact {
+	height: 20px; margin-top: 5px; margin-right: 8%; margin-bottom: 5px; float: right;
+}
+#contact #weibo {
+	width: 30px; text-align: center; margin-left: 10px; float: right;
+}
+
+#login {
+	width: 290px; height: 142px; background-image: url("../images/login/moblie_login.png");
+}
+
+#pitai {
+	float: left;
+}
+#bss_img {
+	float: left;
+}
+#moblie_weibo {
+	width: 67px; height: 24px; margin-left: 12px; float: left;
+}
+.text1 {
+	border-width: 1px 0px 0px 1px; border-style: solid; border-color: rgb(153, 153, 153) rgb(245, 245, 245) rgb(245, 245, 245) rgb(153, 153, 153); border-image: none; width: 240px; height: 22px; color: rgb(66, 66, 66); font-family: "ËÎÌו"; position: relative; background-color: rgb(255, 255, 255);
+}
+.text2 {
+	border-width: 1px 0px 0px 1px; border-style: solid; border-color: rgb(153, 153, 153) rgb(245, 245, 245) rgb(245, 245, 245) rgb(153, 153, 153); border-image: none; width: 80px; height: 22px; color: rgb(66, 66, 66); font-family: "ËÎÌו"; position: relative; background-color: rgb(255, 255, 255);
+}
+#error {
+	height: 25px; text-align: center; color: rgb(255, 0, 0); line-height: 25px; margin-top: 10px; margin-right: auto; margin-left: auto;
+}
+.botton_msg {
+	width: 800px; text-align: center; color: rgb(153, 153, 153); margin-right: auto; margin-left: auto;
+}
+#weiboandbbs {
+	width: 260px; margin-right: auto; margin-left: auto;
+}
+#url_en {
+	left: 23px; width: 110px; height: 20px; margin-right: 10%; float: right; position: relative;
+}
+#url_en a {
+	color: rgb(51, 153, 255);
+}
+.AlrtMsgTxt {
+	text-align: center !important;
+}
+
+
+.label2 {
+	margin-top: 7px; float: left;
+}
+.in_list li {
+	margin-bottom: 12px;
+}
+.in_list li div {
+	color: rgb(120, 120, 120); font-size: 14px; 
+}
+
+.in_list li div label {
+	color: rgb(120, 120, 120); font-size: 14px;
+}
+ul li {
+	list-style: none;
+}
+.copyright {
+	text-align: center; color: rgb(152, 152, 152);
+}
+.copyright p {
+	margin: 0px;
+}
+.check_box {
+	width: 130px; height: 23px; padding-left: 40px; float: left;
+}
+.login_btn {
+	margin: 8px 0px 0px 74px; width: 74px; height: 27px; float: left;
+}

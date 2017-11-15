@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**/
+.IframeBody{ min-width:inherit; background:#fff;}
+
+
+.WorkFlow_table{ border:solid 1px #bdc3c7; border-radius:3px; padding:1px;}
+.WorkFlow_table td,.WorkFlow_table th{ border-right:solid 1px #bdc3c7; background:#fff; padding:10px; font-size:12px;}
+.WorkFlow_table .title{ border-bottom:solid 1px #bdc3c7;}
+.WorkFlow_table .title td,.WorkFlow_table .title th{ background:#f8f8f8; padding:10px; font-size:14px; text-align:left; font-weight:normal;}
+.WorkFlow_table .operate{ border-right:none;}
+.WorkFlow_table .operate a{ color:#7f8c8d;}
+.WorkFlow_table .bule{ color:#00a0e9;}
+.WorkFlow_table .txt{ border-bottom:solid 1px #bdc3c7;}
+.WorkFlow_table .txt li{ line-height:30px;}
+.WorkFlow_table .noLine{ border-right:none;}

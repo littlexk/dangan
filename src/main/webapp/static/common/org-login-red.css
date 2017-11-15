@@ -1,0 +1,134 @@
+body {
+	background-image: url("../images/login2/backgroup-red.jpg");
+	background-size:cover;
+}
+
+.loginTitle{
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 140px;
+   width: 354px;
+   height: 30px;
+   font-size: 28px;
+   color: white;
+}
+
+.loginFormDiv{
+   width: 354px;
+   height: 291px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 25px;
+}
+.loginFormIpt {
+	background-image:url("../images/login2/button.png");
+    height: 60px;
+    background-position: center;
+	background-repeat: no-repeat;
+    padding-right: 5px;
+    margin-top:20px;
+    z-index: 2;
+}
+.loginFormIpt:focus {
+	background-image:url("../images/login2/button_suru.png");
+}
+.loginFormIpt span {
+    float: left;
+    margin-left: 50px;
+    margin-top: 21px;
+    margin-right: 10px;
+}
+.loginFormIpt p {
+    float: left;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 9px;
+}
+.formIpt {
+	float: left;
+    width: 205px;
+    margin-top: 10px;
+    padding: 15px 10px 10px;
+    ime-mode: disabled;
+    height: 21px;
+    width:180px;
+    left: 28px;
+    border: none;
+    line-height: 21px;
+    font-size:16px;
+    BACKGROUND: transparent!important;
+}
+
+input[type="text"], input[type="password"]{
+    border: none;
+    box-shadow: 0;
+    transition: none;
+    box-shadow: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size:16px;
+    -webkit-appearance: textfield;
+    background-color: white;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    color:white;
+    BACKGROUND: transparent!important;
+}
+input:-webkit-autofill {
+BACKGROUND: transparent!important;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus{
+  border-color: transparent!important;
+  outline: 0;
+  outline: thin dotted \9;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+.btn_login{
+	width:283px;
+	height:62px;
+	color: white;
+	background-image: url('../images/login2/loginButton_regular.png');
+	background-repeat: no-repeat;
+	padding-top:20px;
+	cursor:pointer;
+	font-size: 27px;
+}
+.btn_login:HOVER{
+	background-image: url('../images/login2/loginButton_hover.png');
+}
+.error{
+	margin-right: auto;
+}
+
+.alert-danger, .alert-error {
+    background:transparent!important;
+    color: white;
+}
+.alert {
+	background:transparent!important;
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    border: 0px solid #efb99e;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    color: white;
+}
+label.error {
+    background:transparent!important;
+    color: white;
+    font-weight: bold;
+    margin-left: 0px;
+    padding-bottom: 2px;
+    padding-left: 18px;
+}

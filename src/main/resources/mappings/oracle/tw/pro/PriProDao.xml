@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.van.modules.tw.dao.pro.PriProDao">
+    <select id="list" parameterType="map" resultType="upperCaseKeyMap">
+        select t.* from T_TW_PRI_PRO t
+        <where>
+            <if test="TYPE !=null and TYPE !=''">
+                AND	t.TYPE = #{TYPE}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert" parameterType="map">
+        insert into  T_TW_PRI_PRO (
+        <trim prefix=""  suffixOverrides=",">
+			ID,NAME,P_SORT,TYPE,REMARK
+        </trim>
+        )values(
+        <trim prefix=""  suffixOverrides=",">
+			SEQ_T_TW_PRI_PRO.Nextval,#{NAME},#{P_SORT},#{TYPE},#{REMARK}
+        </trim>
+        )
+    </insert>
+    <select id="get" parameterType="string" resultType="upperCaseKeyMap">
+        SELECT t.* FROM  T_TW_PRI_PRO t where t.ID=#{id}
+    </select>
+
+    <update id="update"  parameterType="map">
+        update  T_TW_PRI_PRO
+        <set>
+            NAME = #{NAME},P_SORT = #{P_SORT},TYPE = #{TYPE},REMARK = #{REMARK}
+        </set>
+        where ID = #{ID}
+    </update>
+    <delete id="delete" parameterType="map">
+        DELETE FROM T_TW_PRI_PRO
+        <where>
+            AND ID IN
+            <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+            #{item}
+            </foreach>
+        </where>
+    </delete>
+</mapper>
